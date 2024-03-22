@@ -1,5 +1,6 @@
 # Игра \Тир\
 import pygame
+import random
 # образуем тело цикла всей игры
 pygame.init()
 
@@ -14,9 +15,15 @@ pygame.display.set_caption("Игра Тир")
 icon = pygame.image.load("img/tir.prn")
 pygame.display.set_icon(icon)
 
-target_icon = pygame.image.load("img/")
+target_icon = pygame.image.load("img/target.png")
 target_WIDTH = 50
 target_HEIGHT = 50
+
+target_x = random.randint(0, SCREEN_WIDTH - target_WIDTH)
+target_y = random.randint(0, SCREEN_HEIGHT - target_HEIGHT)
+
+color = (random.randint(0, 256), random.randint(0, 256), random.randint(0, 256))
+
 
 running = True
 
