@@ -46,7 +46,7 @@ while running:
             mouse_x, mouse_y = pygame.mouse.get_pos()
             if target_x < mouse_x < target_x + target_WIDTH and target_y < mouse_y < target_y + target_HEIGHT:
                 hits += 1
-                if hits == 10:
+                if hits == 30:
                     speed += 1
                     hits = 0
                 target_x = random.randint(0, SCREEN_WIDTH - target_WIDTH)
@@ -60,7 +60,7 @@ while running:
 
     screen.blit(target_icon, (target_x, target_y))
     font = pygame.font.Font(None, 36)
-    text = font.render(f"Clicks: {clicks}, Hits: {hits}, Misses: {misses}", True, (255, 255, 255))
+    text = font.render(f"Выстрел: {clicks}, Точность: {hits}, Пропуск: {misses}", True, (255, 255, 255))
     screen.blit(text, (10, 10))
 
     pygame.display.update()
